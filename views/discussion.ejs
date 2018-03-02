@@ -30,7 +30,7 @@
 
         <div class="col m8">
           <h3><%= db_array[0].title %></h3>
-          <div class="book-description"><%= db_array[0].description %></div>
+          <div class="book-description"><p><%= db_array[0].description %></p></div>
         </div>
         <!--end col 8-->
 
@@ -42,13 +42,13 @@
 
     <div class="section-2">
       <div class="all-comments">
-        <div class="comment-title">Comments</div>
+        <div class="comment-title">Discussion</div>
         <!--EJS loop over this to re-create-->
 
         <% for (let i = 0; i < db_array.length; i++) { %>
           <div class="comment">
             <div class="commenter"><%= db_array[i].commenter %></div>
-            <div class="comment-content"><%= db_array[i].comment_content %></div>
+            <div class="comment-content"><p><%= db_array[i].comment_content %></p></div>
 
           </div>
           <% } %><!--loop end-->

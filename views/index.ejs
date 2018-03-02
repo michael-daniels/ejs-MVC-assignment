@@ -29,7 +29,7 @@
 
               <div class="book-title z-depth-1"><h5><%= db_array[i].title %></h5></div>
               <div class="book-photo"><img class="book-image" src="<%= db_array[i].img_url %>" /></div>
-              <div class="book-description"><%= db_array[i].description.substring(0, 40) %>...</div>
+              <div class="book-description"><p><%= db_array[i].description.substring(0, 40) %>...</p></div>
               <a href="/discussion/<%= db_array[i].id %>"><div class="book-discuss"><button class="discuss-btn btn">Discuss</button></div></a>
             </div>
           </div>

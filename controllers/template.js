@@ -10,7 +10,7 @@ module.exports = {
   },
 
   addbookget: function(req, res) {
-    knex('authors').then((results) => {
+    knex('authors').orderBy('id', 'desc').then((results) => {
       res.render("addbook", {author_array:results});
     })
   },
@@ -21,6 +21,7 @@ module.exports = {
       title: req.body.title,
       img_url: req.body.imgurl,
       description: req.body.description,
+      author_id: req.body.author_id
     })
       .then(() => {
         res.redirect('/')

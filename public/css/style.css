@@ -18,8 +18,16 @@ h5 {
   color: white;
   font-family:Ubuntu;
 }
+p {
+  color:gray;
+  font-size:16px;
+  margin:0;
+}
+form {
+  margin-bottom:50px;
+}
 nav {
-  background-color: #4CAF50;
+  background-color: silver;
   text-align: center;
 }
 input {
@@ -38,6 +46,7 @@ select {
 }
 .btn {
   background-color: #4CAF50;
+  width:100%;
 }
 .btn:hover {
   background-color: #4CAF50;
@@ -51,7 +60,6 @@ select {
 }
 .section-2 {
   background-color:;
-  min-height: 300px;
 }
 .book-card {
   border-radius: 3px;
@@ -60,11 +68,10 @@ select {
   min-height: 350px;
   max-height: 350px;
   margin:auto;
-  margin-top:25px;
   margin-bottom:25px;
 }
 .book-title {
-  background-color: #4CAF50;
+  background-color: silver;
   padding:1px 0;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
@@ -91,7 +98,7 @@ select {
   width:70%;
 }
 .all-comments {
-  padding:0 30%;
+margin:0 20%;
 }
 .comment-title {
   font-size: 30px;
@@ -100,7 +107,15 @@ select {
 .commenter {
   font-size: 20px;
   color:#757575;
+  text-align: left;
+}
+.comment-content {
+  text-align: left;
 }
 .comment {
   margin: 15px 0;
+  width:100%;
+  border:1px solid #f2f2f2;
+  padding:10px 10px;
+  border-radius:3px;
 }

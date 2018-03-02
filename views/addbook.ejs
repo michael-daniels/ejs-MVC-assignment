@@ -24,6 +24,21 @@
 
       <form action="/addbook" method="POST">
 
+      <div class="author-select-or-add row">
+
+          <div class="col m8">
+            <select name="author_id" class="browser-default">
+              <option value="" disabled selected>Select Author</option>
+              <% for (let i = 0; i < author_array.length; i++) { %>
+              <option value="<%= author_array[i].id %>"><%= author_array[i].name %></option>
+              <% } %>
+            </select>
+          </div>
+
+        <div class="col m4"><a href="/newauthor"><button type="button" class="add-book btn">Add a New Author</button></a></div>
+
+      </div>
+
           <div class="row">
             <div class="input-field col s12">
               <input name="title" type="text" class="validate" placeholder="Title">
@@ -42,21 +57,10 @@
             </div>
           </div>
 
-          <div class="row">
-            <div class="col s12">
-              <select class="browser-default">
-                <% for (let i = 0; i < author_array.length; i++) { %>
-                <option value="<%= author_array[i].id %>"><%= author_array[i].name %></option>
-                <% } %>
-              </select>
-            </div>
-          </div>
-
           <button type="submit" class="add-book btn">Submit</button>
 
     </form>
-    <br />
-    <a href="/newauthor"><button class="add-book btn">Add a New Author</button></a>
+
   </div>
   </div>
   <!--end section-1-->

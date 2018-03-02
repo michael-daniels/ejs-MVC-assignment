@@ -25,6 +25,9 @@ nav {
 input {
   text-align: center;
 }
+select {
+  text-align: center;
+}
 .logo {
   font-size: 30px;
   color:white;
@@ -51,11 +54,11 @@ input {
   min-height: 300px;
 }
 .book-card {
-  width:100px;
   border-radius: 3px;
   background-color: #f2f2f2;
-  width:80%;
+  min-width:80%;
   min-height: 350px;
+  max-height: 350px;
   margin:auto;
   margin-top:25px;
   margin-bottom:25px;

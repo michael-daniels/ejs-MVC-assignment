@@ -24,12 +24,12 @@
 
           <!--EJS loop over this to re-create-->
           <% for (let i = 0; i < db_array.length; i++) { %>
-          <div class="a-column col m6">
+          <div class="a-column col l6 m6 s12">
             <div class="book-card">
 
               <div class="book-title z-depth-1"><h5><%= db_array[i].title %></h5></div>
               <div class="book-photo"><img class="book-image" src="<%= db_array[i].img_url %>" /></div>
-              <div class="book-description"><%= db_array[i].description.substring(0, 75) %>...</div>
+              <div class="book-description"><%= db_array[i].description.substring(0, 40) %>...</div>
               <a href="/discussion/<%= db_array[i].id %>"><div class="book-discuss"><button class="discuss-btn btn">Discuss</button></div></a>
             </div>
           </div>

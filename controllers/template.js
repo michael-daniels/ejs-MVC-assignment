@@ -3,14 +3,16 @@ const knex = require("../db/knex.js");
 module.exports = {
   // CHANGE ME TO AN ACTUAL FUNCTION
   index: function(req, res) {
-    knex('books').then((results) => {
+    knex('books').orderBy('id', 'desc').then((results) => {
       console.log(results)
       res.render('index', {db_array:results})
     })
   },
 
   addbookget: function(req, res) {
-    res.render("addbook");
+    knex('authors').then((results) => {
+      res.render("addbook", {author_array:results});
+    })
   },
 
   addbookpost: function(req, res) {
@@ -25,8 +27,18 @@ module.exports = {
       })
   },
 
-  newauthor: function(req, res) {
+  newauthorget: function(req, res) {
     res.render("newauthor");
+  },
+
+  newauthorpost: function(req, res) {
+    knex('authors').insert({
+      name: req.body.name,
+      bio: req.body.bio
+    }).then(() => {
+      res.redirect("/addbook");
+    })
+
   },
 
   discussionget: function(req, res) {

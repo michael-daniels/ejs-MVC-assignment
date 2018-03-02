@@ -8,7 +8,9 @@ module.exports = function(app){
 
   app.get('/addbook', template.addbookget);
 
-  app.get('/newauthor', template.newauthor);
+  app.post('/newauthor', template.newauthorpost);
+
+  app.get('/newauthor', template.newauthorget);
 
   app.post('/discussion/:id', template.discussionpost);
 

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <title>Books App</title>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Sriracha|Ubuntu" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="logo"><i class="fas fa-book"></i> BookApp</div>
+    </nav>
+  </header>
+
+  <div class="container">
+
+    <div class="section-1">
+
+      <div class="row">
+        <div class="col m4">
+          <div class="book-photo"><img class="book-image-discussion" src="<%= db_array[0].img_url %>" /></div>
+        </div>
+        <!--end col 8-->
+
+        <div class="col m8">
+          <h3><%= db_array[0].title %></h3>
+          <div class="book-description"><%= db_array[0].description %></div>
+        </div>
+        <!--end col 8-->
+
+      </div>
+      <!--end row-->
+
+    </div>
+    <!--end section-1-->
+
+    <div class="section-2">
+      <div class="all-comments">
+        <div class="comment-title">Comments</div>
+        <!--EJS loop over this to re-create-->
+
+        <% for (let i = 0; i < db_array.length; i++) { %>
+          <div class="comment">
+            <div class="commenter"><%= db_array[i].commenter %></div>
+            <div class="comment-content"><%= db_array[i].comment_content %></div>
+
+          </div>
+          <% } %><!--loop end-->
+      </div><!--end all comments-->
+
+    </div>
+    <!--end section 2-->
+
+    <div class="section-3">
+
+      <form method="POST">
+
+        <div class="row">
+          <div class="input-field col s12">
+            <input name="commenterName" type="text" class="validate" placeholder="Name">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12">
+            <input name="commentContent" type="text" class="validate" placeholder="Comment">
+          </div>
+        </div>
+
+        <button type="submit" class="add-book btn">Submit</button>
+
+      </form>
+
+    </div>
+    <!--end section-3-->
+
+  </div>
+  <!--end container-->
+</body>
+
+</html>

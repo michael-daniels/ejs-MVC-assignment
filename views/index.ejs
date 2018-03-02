@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Books App</title>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Sriracha|Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    <header>
+      <nav><div class="logo"><i class="fas fa-book"></i> BookApp</div></nav>
+    </header>
+
+    <div class="container">
+
+      <div class="section-1">
+        <a href="/addbook"><button class="add-book btn">Add a New Book</button></a>
+      </div><!--end section-1-->
+
+      <div class="section-2">
+        <div class="row main-content">
+
+          <!--EJS loop over this to re-create-->
+          <% for (let i = 0; i < db_array.length; i++) { %>
+          <div class="a-column col m6">
+            <div class="book-card">
+
+              <div class="book-title z-depth-1"><h5><%= db_array[i].title %></h5></div>
+              <div class="book-photo"><img class="book-image" src="<%= db_array[i].img_url %>" /></div>
+              <div class="book-description"><%= db_array[i].description.substring(0, 75) %>...</div>
+              <a href="/discussion/<%= db_array[i].id %>"><div class="book-discuss"><button class="discuss-btn btn">Discuss</button></div></a>
+            </div>
+          </div>
+          <% } %>
+          <!--loop end-->
+
+        </div><!--end main content-->
+      </div><!--end section 2-->
+    </div><!--end container-->
+  </body>
+</html>
